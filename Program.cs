@@ -1,4 +1,7 @@
-﻿double etanol, gasolina, Calculo = 0;
+﻿using System.Runtime.CompilerServices;
+
+double etanol, gasolina, Calculo = 0;
+double porce = 0;
 
 Console.WriteLine(@"/////  Preço da Gasolina e do Alcool  \\\\\");
 
@@ -8,15 +11,24 @@ etanol = Convert.ToDouble(Console.ReadLine());
 Console.WriteLine("Preço do Gasolina...: ");
 gasolina = Convert.ToDouble(Console.ReadLine());
 
-void Calculo_Preco(){
+void precotras(){
     Calculo = etanol / gasolina;
-
-    if(Calculo > 0.73){
-        Console.WriteLine("Abasteça com Gasolina Mais em Conta");
-        
-    }
 }
 
-Calculo_Preco();
+precotras();
 
-Console.WriteLine($"{Calculo}");
+void porcen(){
+    porce = Calculo * 100;
+}
+
+porcen();
+
+if(Calculo > 0.73){
+    Console.WriteLine($"O preço do etanol corresponde a {porce}% do preço da gasolina.");
+    Console.WriteLine("Gasolina Está Mais Em Conta");
+}
+
+else if(Calculo < 0.73){
+    Console.WriteLine($"O preço do etanol corresponde a {porce}% do preço da gasolina.");
+    Console.WriteLine("Etanol Está Mais Em Conta");
+}
